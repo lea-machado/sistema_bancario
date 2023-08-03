@@ -21,9 +21,12 @@ while True:
         opcao = int(input("Opção inválida, digite novamente:"))
     if opcao==1:
         deposito = float(input("\nDigite o valor a ser depositado: "))
-        saldo += deposito
-        extrato.append(f"+ R$ {deposito:.2f}")
-        print("Valor depositado com sucesso!")
+        if deposito>0:
+            saldo += deposito
+            extrato.append(f"+ R$ {deposito:.2f}")
+            print("Valor depositado com sucesso!")
+        else:
+            print("Valor inválido.")
     if opcao==2:
         if quantidade_saques_diario<3:
             saque = float(input("\nDigite o valor a ser sacado: "))
@@ -31,11 +34,13 @@ while True:
                 print("\nSaldo insuficiente para realizar o saque!")
             elif saque>500:
                 print("\nValor acima do limite de R$500,00 por saque!")
-            else:
+            elif saque>0:
                 saldo -= saque
                 quantidade_saques_diario += 1
                 extrato.append(f"- R$ {saque:.2f}")
                 print("Valor sacado com sucesso!")
+            else:
+                print("Valor inválido.")
         else:
             print("\nVocê já realizou o número máximo de saques diários por hoje!")
     if opcao==3:
