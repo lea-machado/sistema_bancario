@@ -9,7 +9,7 @@ menu="""
 3- Extrato
 4- Sair
 ------------------------------"""
-saldo = 1000
+saldo = 0
 quantidade_saques_diario = 0
 extrato = []
 
