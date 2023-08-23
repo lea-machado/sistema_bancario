@@ -59,7 +59,6 @@ def funcao_criar_usuario(dados_clientes, lista_clientes):
     else:
         informacoes_usuario(cpf, dados_clientes, lista_clientes)
         print("Usuário cadastrado com sucesso!")
-        print(lista_clientes)
 
 def buscar_cpf(lista_clientes):
     posicao_cliente = -1
@@ -103,8 +102,6 @@ def funcao_criar_conta(numero_conta, conta_individual, contas, lista_clientes, A
         contas.append(conta_individual[:])
         conta_individual.clear()
         print("Conta criada com sucesso!")
-    print(contas)
-
 
     return contas
 
@@ -117,13 +114,11 @@ def informacoes_do_usuario(lista_clientes, contas):
         if buscar_contas(contas, cpf)==False:
             print("Ainda não abertas contas para este usuário.")
 
-
 def buscar_contas(contas, cpf):
     tamanho_lista = len(contas)
     for i in range(tamanho_lista):
         if cpf == contas[i][3]:
             print(f"\nAgência: {contas[i][0]} \tNúmero da conta: {contas[i][1]}")
-
 
 def estrutura_dados_usuario(lista_clientes, posicao_cliente):
     estrutura_dados_usuario = f"""\n
@@ -144,7 +139,6 @@ def main():
     dados_clientes = []
     contas = []
     conta_individual = []
-
 
     while True:
         sleep(0.45)
